@@ -1,60 +1,4 @@
-const members = [
-  {
-    id: 1,
-    name: "member A",
-    linkId: 3,
-  },
-  {
-    id: 2,
-    name: "member B",
-    linkId: 1,
-  },
-  {
-    id: 3,
-    name: "member C",
-    linkId: 2,
-  },
-  {
-    id: 4,
-    name: "member D",
-    linkId: null,
-  },
-  {
-    id: 5,
-    name: "member E",
-    linkId: null,
-  },
-  {
-    id: 6,
-    name: "member F",
-    linkId: 1,
-  },
-  {
-    id: 7,
-    name: "member G",
-    linkId: 9,
-  },
-  {
-    id: 8,
-    name: "member H",
-    linkId: 9,
-  },
-  {
-    id: 9,
-    name: "member I",
-    linkId: null,
-  },
-  {
-    id: 10,
-    name: "member J",
-    linkId: 10,
-  },
-  {
-    id: 11,
-    name: "member K",
-    linkId: null,
-  },
-];
+const members = require("./members");
 
 function membersBilledAndDependents(members) {
   //1)Determine which members should be billed
@@ -125,6 +69,6 @@ for (let [key, value] of dependentChildren) {
 
 //Detect circular references
 console.log("3) Circular references detected:");
-for (circle of circularReferences) {
+for (let circle of circularReferences) {
   console.log(`${circle.join(" linked to ")}.`);
 }
